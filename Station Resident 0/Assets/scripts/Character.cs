@@ -18,8 +18,6 @@ public class Character : MonoBehaviour {
 
 	public KeyCode itemlock;
 
-	bool isGrabbed = false;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -83,14 +81,14 @@ public class Character : MonoBehaviour {
 
                 blah.collider.gameObject.transform.parent = gameObject.transform;
 				blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true; 
-				isGrabbed = true;
+
             }
 			else if (Input.GetKeyUp(itemlock) /*&& isGrabbed == true*/) 
 			{
 
 				blah.collider.gameObject.transform.parent = null;
 				blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = false; 
-				isGrabbed = false;
+
 			}
 			//= Physics2D.Raycast(transform.position, Vector2.right)
 			//Physics2D.Raycast(transform.position, Vector2.right, 1, layerMask)

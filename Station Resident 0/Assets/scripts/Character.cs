@@ -16,8 +16,10 @@ public class Character : MonoBehaviour {
 	public KeyCode rotateboostleft; // rotate left key
 	public KeyCode rotateboostright; //rotate right key
 
+    public bool isGrabbed = false;
+
 	public KeyCode itemlock; //grabbign mechanic key
-    public int playerhealth; //player health variable
+    public int playerhealth; //player health variablesss
 
 
 	// Use this for initialization
@@ -77,28 +79,28 @@ public class Character : MonoBehaviour {
         //Player grabbing mechanic in detail, uses raycast to see if item is near, 
         //then loops to manage weather or not the item is grabbed
         
-		RaycastHit2D blah = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 1, layerMask);
+		RaycastHit2D blah = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 5, layerMask);
 		if (blah)
         {
-            //Debug.Log("HERE");
-            if (Input.GetKeyDown(itemlock) /*&& isGrabbed == false*/)
+           
+            if (Input.GetKeyDown(itemlock))
             {
+                Debug.Log("HERE");
+                if (isGrabbed == false)
+                {
+                    blah.transform.localRotation = gameObject.transform.localRotation;
+                    blah.collider.gameObject.transform.parent = gameObject.transform;
+                    blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                    isGrabbed = true;
+                }
 
-                blah.collider.gameObject.transform.parent = gameObject.transform;
-				blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true; 
-
+                else if (isGrabbed == true)
+                {
+                    blah.collider.gameObject.transform.parent = null;
+                    blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                    isGrabbed = false;
+                }
             }
-			else if (Input.GetKeyUp(itemlock) /*&& isGrabbed == true*/) 
-			{
-
-				blah.collider.gameObject.transform.parent = null;
-				blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = false; 
-
-			}
-			//= Physics2D.Raycast(transform.position, Vector2.right)
-			//Physics2D.Raycast(transform.position, Vector2.right, 1, layerMask)
-		
-
 
 		}
 

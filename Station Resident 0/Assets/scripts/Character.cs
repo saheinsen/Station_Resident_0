@@ -6,17 +6,19 @@ public class Character : MonoBehaviour {
     public LayerMask layerMask;
     public object interactable;
 	
-	public KeyCode boostup;
-	public KeyCode boostdown;
-	public KeyCode boostright;
-	public KeyCode boostleft;
-	public float jetpackPowa;
-	public float jetpacksidePowa;
-	public KeyCode inertiamachine;
-	public KeyCode rotateboostleft;
-	public KeyCode rotateboostright;
+	public KeyCode boostup; //player upward movement key
+    public KeyCode boostdown; //player downward movement key
+    public KeyCode boostright; //player rightward movement key
+    public KeyCode boostleft;  //player leftward movement key
+    public float jetpackPowa; //overall speed added to player on button press
+	public float jetpacksidePowa; //player rotation force added on button press
+	public KeyCode inertiamachine; //brake key
+	public KeyCode rotateboostleft; // rotate left key
+	public KeyCode rotateboostright; //rotate right key
 
-	public KeyCode itemlock;
+	public KeyCode itemlock; //grabbign mechanic key
+    public int playerhealth; //player health variable
+
 
 	// Use this for initialization
 	void Start () {
@@ -60,18 +62,21 @@ public class Character : MonoBehaviour {
 
 			//rigidbody2D.velocity = Vector2.zero;
 			gameObject.rigidbody2D.drag = 0f;
-			//gameObject.rigidbody2D.fixedAngle = false;
+			//gameObject.rigidbody2D.fixedAngle = false;//
 			gameObject.rigidbody2D.angularDrag = 0f;
 		}
 
 		if (Input.GetKeyDown(inertiamachine)) 
 		{
 			gameObject.rigidbody2D.drag = 1f;
-			//gameObject.rigidbody2D.fixedAngle = true;
+			//gameObject.rigidbody2D.fixedAngle = true;//
 			gameObject.rigidbody2D.angularDrag = 5f;
 		}
 
-        //Vector2 right = transform.TransformDirection(Vector2.right);
+
+        //Player grabbing mechanic in detail, uses raycast to see if item is near, 
+        //then loops to manage weather or not the item is grabbed
+        
 		RaycastHit2D blah = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 1, layerMask);
 		if (blah)
         {
@@ -93,11 +98,21 @@ public class Character : MonoBehaviour {
 			//= Physics2D.Raycast(transform.position, Vector2.right)
 			//Physics2D.Raycast(transform.position, Vector2.right, 1, layerMask)
 		
+
+
 		}
 
 	
 	}
-
+    //hazardous object and damage management
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Hazard")
+        {
+         playerhealth = playerhealth - 10;
+            
+        }
+    }
 
 	
 	}

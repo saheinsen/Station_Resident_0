@@ -75,7 +75,7 @@ public class Character : MonoBehaviour {
 		RaycastHit2D blah = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 1, layerMask);
 		if (blah)
         {
-            Debug.Log("HERE");
+            //Debug.Log("HERE");
             if (Input.GetKeyDown(itemlock) /*&& isGrabbed == false*/)
             {
 

@@ -4,20 +4,34 @@ using System.Collections;
 public class DoorScript : MonoBehaviour {
 
 	public LayerMask doorlayer;
-
+	public bool isopen;
 	// Use this for initialization
 	void Start () {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-		RaycastHit2D doorcheck = Physics2D.Raycast(gameObject.transform.position, -Vector2.right, 10, doorlayer);
-		if (doorcheck.collider.gameObject.name == "Player")
+	void Update () 
+	{
+		
+	}
+	//if loop determining if player is within collider
+	void OnTriggerStay2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "Player" && isopen == false) 
 		{
-			Debug.Log("HERE");
-			transform.Translate(0, +5, 0);
+
+			gameObject.transform.Translate(5, 0, 0);
+			isopen = true;
+		}
+	}
+	//loop to determine when player leaves the door
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "Player" && isopen == true) 
+		{
+			gameObject.transform.Translate(-5, 0, 0);
+			isopen = false;	 
 		}
 	}
 }

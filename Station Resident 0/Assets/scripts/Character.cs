@@ -16,10 +16,13 @@ public class Character : MonoBehaviour {
 	public KeyCode rotateboostleft; // rotate left key
 	public KeyCode rotateboostright; //rotate right key
 
+	public GUIStyle LoreBox;
+	public LoreMngmt loremngmt;
+
     public bool isGrabbed = false;
 
-	public KeyCode itemlock; //grabbign mechanic key
-    public int playerhealth; //player health variablesss
+	public KeyCode itemlock; //grabbing mechanic key
+    public int playerhealth; //player health variables
 
 
 	// Use this for initialization
@@ -30,7 +33,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//jeptack lateral movement
+		//jetpack lateral movement
 		if (Input.GetKeyDown(boostup)) 
 		{
 			rigidbody2D.AddRelativeForce(Vector2.up * jetpackPowa);
@@ -85,7 +88,7 @@ public class Character : MonoBehaviour {
            
             if (Input.GetKeyDown(itemlock))
             {
-                Debug.Log("HERE");
+                //Debug.Log("HERE");
                 if (isGrabbed == false)
                 {
                     blah.transform.localRotation = gameObject.transform.localRotation;
@@ -114,8 +117,16 @@ public class Character : MonoBehaviour {
          playerhealth = playerhealth - 10;
             
         }
+
     }
 
+
+	public void OnGUI ()
+	{
+		loremngmt = gameObject.GetComponent<LoreMngmt>();
+
+		GUI.Label(new Rect (0,0,200,100), loremngmt.Loretext, LoreBox);
+	}
 	
 	}
 

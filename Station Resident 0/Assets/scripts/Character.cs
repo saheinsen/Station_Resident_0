@@ -16,7 +16,7 @@ public class Character : MonoBehaviour {
 	public KeyCode rotateboostleft; // rotate left key
 	public KeyCode rotateboostright; //rotate right key
 
-	public GUIStyle LoreBox;
+	//public GUIStyle LoreBox;
 	public LoreMngmt loremngmt;
 
     public bool isGrabbed = false;
@@ -115,17 +115,18 @@ public class Character : MonoBehaviour {
         if (col.gameObject.tag == "Hazard")
         {
          playerhealth = playerhealth - 10;
-            
         }
 
     }
 
 
-	public void OnGUI ()
+	void OnGUI ()
 	{
 		loremngmt = gameObject.GetComponent<LoreMngmt>();
-
-		GUI.Label(new Rect (0,0,200,100), loremngmt.Loretext, LoreBox);
+        
+        GUI.backgroundColor = Color.black;
+        GUI.contentColor = Color.white;
+		GUI.Button(new Rect(50, 50, 500, 200), loremngmt.Loretext);
 	}
 	
 	}

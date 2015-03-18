@@ -119,8 +119,14 @@ public class Character : MonoBehaviour {
 
     }
 
-
-
+    //Health GUI
+       public void OnGUI()
+    {
+        
+        GUI.backgroundColor = Color.red;
+        GUI.Button(new Rect(1100, 50, playerhealth, 50), "");
+    }
+}
 	
-	}
+	
 

@@ -17,7 +17,7 @@ public class Character : MonoBehaviour {
 	public KeyCode rotateboostright; //rotate right key
 
 	//public GUIStyle LoreBox;
-	public LoreMngmt loremngmt;
+	
 
     public bool isGrabbed = false;
 
@@ -120,14 +120,7 @@ public class Character : MonoBehaviour {
     }
 
 
-	void OnGUI ()
-	{
-		loremngmt = gameObject.GetComponent<LoreMngmt>();
-        
-        GUI.backgroundColor = Color.black;
-        GUI.contentColor = Color.white;
-		GUI.Button(new Rect(50, 50, 500, 200), loremngmt.Loretext);
-	}
+
 	
 	}
 

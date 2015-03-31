@@ -18,11 +18,7 @@ public class LockedDoor : MonoBehaviour {
     {
 
     }
-<<<<<<< HEAD
     //if loop determining if player is within collider and if the door is unlocked
-=======
-    //if loop determining if player is within collider
->>>>>>> origin/master
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" && isopen == false && isUnlocked == true)
@@ -39,11 +35,7 @@ public class LockedDoor : MonoBehaviour {
         {
             gameObject.transform.Translate(-5, 0, 0);
             isopen = false;
-<<<<<<< HEAD
         } 
-=======
-        }
->>>>>>> origin/master
     }
 }
 

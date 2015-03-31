@@ -32,8 +32,4 @@ Material:
       data:
         first:
           name: _Color
-<<<<<<< HEAD
         second: {r: 1, g: 1, b: 1, a: 1}
-=======
-        second: {r: .0735294223, g: 1, b: .846653044, a: 1}
->>>>>>> origin/master

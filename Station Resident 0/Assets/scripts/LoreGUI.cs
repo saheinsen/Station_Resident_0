@@ -5,11 +5,7 @@ public class LoreGUI : MonoBehaviour {
 
 
     public LoreMngmt loremngmt;
-<<<<<<< HEAD
 //handle GUI format
-=======
-
->>>>>>> origin/master
     public void OnGUI()
     {
         loremngmt = gameObject.GetComponent<LoreMngmt>();

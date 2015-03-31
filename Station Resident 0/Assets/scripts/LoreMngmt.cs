@@ -6,7 +6,6 @@ public class LoreMngmt : MonoBehaviour {
     //reference the script with the GUI format
     public LoreGUI Guimanager;
     
-<<<<<<< HEAD
 	//bools dictating whether or not the player has the lore item
 	private static bool Loreowned1 = false;
 	private bool Loreowned2 = false;
@@ -17,9 +16,6 @@ public class LoreMngmt : MonoBehaviour {
 	private bool Loreowned7 = false;
 	private bool Loreowned8 = false;
 	private bool Loreowned9 = false;
-=======
-
->>>>>>> origin/master
     
 	//keys to access the lore arguments
 	public KeyCode Loreaccess1;
@@ -31,7 +27,6 @@ public class LoreMngmt : MonoBehaviour {
 	public KeyCode Loreaccess7;
 	public KeyCode Loreaccess8;
 	public KeyCode Loreaccess9;
-<<<<<<< HEAD
 	
 	
 	
@@ -45,26 +40,6 @@ public class LoreMngmt : MonoBehaviour {
 		//DontDestroyOnLoad(transform.gameObject);
 
 	}
-=======
-
-
-	//bools dictating whether or not the player has the lore item
-	private bool Loreowned1 = false;
-	private bool Loreowned2 = false;
-	private bool Loreowned3 = false;
-	private bool Loreowned4 = false;
-	private bool Loreowned5 = false;
-	private bool Loreowned6 = false;
-	private bool Loreowned7 = false;
-	private bool Loreowned8 = false;
-	private bool Loreowned9 = false;
-
-   
-
-	public string Loretext;
-
-	public bool isPaused = false;
->>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () 
@@ -101,7 +76,6 @@ public class LoreMngmt : MonoBehaviour {
 				Loretext = ("");
 			}
 		}
-<<<<<<< HEAD
 
 		if (Input.GetKeyDown(Loreaccess2) && Loreowned2 == true) 
 		{
@@ -280,10 +254,6 @@ public class LoreMngmt : MonoBehaviour {
 		}
 	}
 	
-=======
-	}
-
->>>>>>> origin/master
 	//lore collision detection
 	void OnTriggerEnter2D(Collider2D col)
 	{	
@@ -293,7 +263,6 @@ public class LoreMngmt : MonoBehaviour {
 			Destroy(col.gameObject);
 			}
     
-<<<<<<< HEAD
 		if (col.gameObject.name == "Lore2") 
 		{
 			Loreowned2 = true;
@@ -341,10 +310,6 @@ public class LoreMngmt : MonoBehaviour {
 			Loreowned9 = true;
 			Destroy(col.gameObject);
 		}
-=======
-   
-
->>>>>>> origin/master
 	}
 }
 

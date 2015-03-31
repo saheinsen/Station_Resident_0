@@ -16,20 +16,28 @@ public class Character : MonoBehaviour {
 	public KeyCode rotateboostleft; // rotate left key
 	public KeyCode rotateboostright; //rotate right key
 
+<<<<<<< HEAD
 	public LevelManagement lvlManager;
 	public GameObject Endbox;
+=======
+	//public GUIStyle LoreBox;
+	
+>>>>>>> origin/master
 
     public bool isGrabbed = false;
 
 	public KeyCode itemlock; //grabbing mechanic key
     public int playerhealth; //player health variables
 
+<<<<<<< HEAD
 
 	public KeyCode pause;
 	public bool anotherpaused = false;
 
 	public pauseMenu Pauser;
 	
+=======
+>>>>>>> origin/master
 
 	
 
@@ -46,6 +54,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+<<<<<<< HEAD
 
 		//pause menu functionality
 		if (Input.GetKeyDown(pause) && anotherpaused == false) 
@@ -65,6 +74,8 @@ public class Character : MonoBehaviour {
 		}
 
 
+=======
+>>>>>>> origin/master
 		//jetpack lateral movement
 		if (Input.GetKeyDown(boostup)) 
 		{
@@ -120,7 +131,11 @@ public class Character : MonoBehaviour {
            
             if (Input.GetKeyDown(itemlock))
             {
+<<<<<<< HEAD
                 
+=======
+                //Debug.Log("HERE");
+>>>>>>> origin/master
                 if (isGrabbed == false)
                 {
                     blah.transform.localRotation = gameObject.transform.localRotation;
@@ -147,26 +162,40 @@ public class Character : MonoBehaviour {
 		}
 
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     //hazardous object and damage management
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Hazard")
         {
          playerhealth = playerhealth - 10;
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
         }
 
     }
 
     //Health GUI
        public void OnGUI()
+<<<<<<< HEAD
     { 
         GUI.backgroundColor = Color.red;
         GUI.Button(new Rect(1100, 50, playerhealth, 50), "");
     }
 
 
+=======
+    {
+        
+        GUI.backgroundColor = Color.red;
+        GUI.Button(new Rect(1100, 50, playerhealth, 50), "");
+    }
+>>>>>>> origin/master
 }
 	
 	

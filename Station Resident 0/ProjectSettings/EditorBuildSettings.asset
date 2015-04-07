@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Basic movement.unity
   - enabled: 1
-    path: Assets/scenes/Level 1 whitebox.unity
+    path: Assets/scenes/Level 1.unity

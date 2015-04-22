@@ -8,14 +8,12 @@ public class LoreMngmt : MonoBehaviour {
     
 	//bools dictating whether or not the player has the lore item
 	private static bool Loreowned1 = false;
-	private bool Loreowned2 = false;
-	private bool Loreowned3 = false;
-	private bool Loreowned4 = false;
-	private bool Loreowned5 = false;
-	private bool Loreowned6 = false;
-	private bool Loreowned7 = false;
-	private bool Loreowned8 = false;
-	private bool Loreowned9 = false;
+	private static bool Loreowned2 = false;
+	private static bool Loreowned3 = false;
+	private static bool Loreowned4 = false;
+	private static bool Loreowned5 = false;
+	private static bool Loreowned6 = false;
+	private static bool Loreowned7 = false;
     
 	//keys to access the lore arguments
 	public KeyCode Loreaccess1;
@@ -25,8 +23,7 @@ public class LoreMngmt : MonoBehaviour {
 	public KeyCode Loreaccess5;
 	public KeyCode Loreaccess6;
 	public KeyCode Loreaccess7;
-	public KeyCode Loreaccess8;
-	public KeyCode Loreaccess9;
+
 
 	//audio
 	AudioSource audioSource;
@@ -212,49 +209,7 @@ public class LoreMngmt : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(Loreaccess8) && Loreowned8 == true) 
-		{
-			
-			if (isPaused == false) 
-			{
-				isPaused = true;
-				Time.timeScale = 0.0f;
-				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
-				
-				
-				
-			}
-			else if (isPaused == true) 
-			{
-				isPaused = false;
-				Time.timeScale = 1.0f;
-				Guimanager.enabled = false;
-				Loretext = ("");
-			}
-		}
 
-		if (Input.GetKeyDown(Loreaccess9) && Loreowned9 == true) 
-		{
-			
-			if (isPaused == false) 
-			{
-				isPaused = true;
-				Time.timeScale = 0.0f;
-				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
-				
-				
-				
-			}
-			else if (isPaused == true) 
-			{
-				isPaused = false;
-				Time.timeScale = 1.0f;
-				Guimanager.enabled = false;
-				Loretext = ("");
-			}
-		}
 	}
 	
 	//lore collision detection
@@ -309,19 +264,7 @@ public class LoreMngmt : MonoBehaviour {
 			audioSource.PlayOneShot(itemGrab);
 		}	
 
-		if (col.gameObject.name == "Lore8") 
-		{
-			Loreowned8 = true;
-			Destroy(col.gameObject);
-			audioSource.PlayOneShot(itemGrab);
-		}	
 
-		if (col.gameObject.name == "Lore9") 
-		{
-			Loreowned9 = true;
-			Destroy(col.gameObject);
-			audioSource.PlayOneShot(itemGrab);
-		}
 	}
 }
 

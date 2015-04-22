@@ -133,6 +133,11 @@ public class UImanager : MonoBehaviour {
 		{
 			Application.LoadLevel(3);
 		}
+
+		if (GUILayout.Button("Level Four"))
+		{
+			Application.LoadLevel(4);
+		}
 		if (GUILayout.Button("Back"))
 		{
 			menuState = main;

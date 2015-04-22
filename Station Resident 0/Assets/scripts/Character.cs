@@ -84,7 +84,10 @@ public class Character : MonoBehaviour {
 	void Update () {
 
 
-
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+		{
+			Application.LoadLevel(0);
+		}
 
 
 		//pausing functionality
@@ -216,6 +219,10 @@ public class Character : MonoBehaviour {
     //hazardous object and damage management based on player colission with music change based on health number
     void OnTriggerEnter2D(Collider2D col)
     {
+		if (col.gameObject.tag == "Gameborder") 
+		{
+			Application.LoadLevel(lvlManager.currentLevel);
+		}
 
         if (col.gameObject.tag == "Hazard")
         {

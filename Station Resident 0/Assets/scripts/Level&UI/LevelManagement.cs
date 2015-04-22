@@ -37,7 +37,10 @@ public class LevelManagement : MonoBehaviour {
 			Application.LoadLevel(currentLevel + 1);
 			Destroy(gameObject);
 		}
-
+		if (currentLevel == 6) 
+		{
+			Application.LoadLevel(0);
+		}
 	}
 
 }

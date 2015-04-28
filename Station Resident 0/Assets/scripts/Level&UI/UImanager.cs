@@ -97,12 +97,14 @@ public class UImanager : MonoBehaviour {
         {
             menuState = credits;
         }
-
+		
         if (GUILayout.Button("Back"))
         {
 			menuState = main;
             Debug.Log("WOLOLOLOLOLOLOLOLO");
         }
+
+
     }
 
     private void optionsFunc(int id)
@@ -116,6 +118,7 @@ public class UImanager : MonoBehaviour {
             menuState = main;
         }
     }
+	
 
 	private void levelFunc(int id)
 	{

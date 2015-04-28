@@ -7,13 +7,13 @@ public class LoreMngmt : MonoBehaviour {
     public LoreGUI Guimanager;
     
 	//bools dictating whether or not the player has the lore item
-	private static bool Loreowned1 = false;
-	private static bool Loreowned2 = false;
-	private static bool Loreowned3 = false;
-	private static bool Loreowned4 = false;
-	private static bool Loreowned5 = false;
-	private static bool Loreowned6 = false;
-	private static bool Loreowned7 = false;
+	 public static bool Loreowned1 = false;
+	 public static bool Loreowned2 = false;
+	 public static bool Loreowned3 = false;
+	 public static bool Loreowned4 = false;
+	 public static bool Loreowned5 = false;
+	 public static bool Loreowned6 = false;
+	 public static bool Loreowned7 = false;
     
 	//keys to access the lore arguments
 	public KeyCode Loreaccess1;
@@ -24,6 +24,7 @@ public class LoreMngmt : MonoBehaviour {
 	public KeyCode Loreaccess6;
 	public KeyCode Loreaccess7;
 
+	public Texture2D textureToDisplay;
 
 	//audio
 	AudioSource audioSource;
@@ -265,6 +266,44 @@ public class LoreMngmt : MonoBehaviour {
 		}	
 
 
+	}
+	void OnGUI()
+	{
+		if (Loreowned1 == true) 
+		{
+			GUI.Label(new Rect (10, 40, 50, 50), textureToDisplay);
+		}
+
+		if (Loreowned2 == true) 
+		{
+			GUI.Label(new Rect (70, 40, 50, 50), textureToDisplay);
+		}
+
+		if (Loreowned3 == true) 
+		{
+			GUI.Label(new Rect (130, 40, 50, 50), textureToDisplay);
+		}
+
+		if (Loreowned4 == true) 
+		{
+			GUI.Label(new Rect (190, 40, 50, 50), textureToDisplay);
+		}
+
+		
+		if (Loreowned5 == true) 
+		{
+			GUI.Label(new Rect (250, 40, 50, 50), textureToDisplay);
+		}
+
+		if (Loreowned6 == true) 
+		{
+			GUI.Label(new Rect (310, 40, 50, 50), textureToDisplay);
+		}
+
+		if (Loreowned7 == true) 
+		{
+			GUI.Label(new Rect (370, 40, 50, 50), textureToDisplay);
+		}
 	}
 }
 

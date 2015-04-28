@@ -13,7 +13,7 @@ public class LevelManagement : MonoBehaviour {
 	void Awake() 
 	{
 		DontDestroyOnLoad(transform.gameObject);
-		currentLevel = 0;
+		//currentLevel = 0;
 	}
 
 	// Use this for initialization
@@ -34,8 +34,15 @@ public class LevelManagement : MonoBehaviour {
 		if (whatHitMe.gameObject.tag == "Player") 
 		{
 			Debug.Log("HERE");
-			Application.LoadLevel(currentLevel + 1);
-			Destroy(gameObject);
+			if (currentLevel < 5) 
+			{
+				Application.LoadLevel(currentLevel + 1);
+			}
+			if (currentLevel == 5) 
+			{
+				currentLevel += 1;	
+			}
+
 		}
 		if (currentLevel == 6) 
 		{

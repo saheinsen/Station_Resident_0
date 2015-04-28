@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/scenes/Level4.unity
   - enabled: 1
     path: Assets/scenes/finalLevel.unity
+  - enabled: 1
+    path: Assets/scenes/Ending scene.unity

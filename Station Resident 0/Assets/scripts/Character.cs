@@ -246,7 +246,7 @@ public class Character : MonoBehaviour {
 		{
 			if (isGrabbed == false) 
 			{
-				Debug.Log("fuck unity");
+
 				grb.transform.localRotation = gameObject.transform.localRotation;
 				grb.gameObject.transform.parent = gameObject.transform;
 				grb.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;

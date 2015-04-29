@@ -34,14 +34,12 @@ public class LevelManagement : MonoBehaviour {
 		if (whatHitMe.gameObject.tag == "Player") 
 		{
 			Debug.Log("HERE");
-			if (currentLevel < 5) 
-			{
-				Application.LoadLevel(currentLevel + 1);
-			}
-			if (currentLevel == 5) 
-			{
-				currentLevel += 1;	
-			}
+			Application.LoadLevel(currentLevel + 1);
+
+			//			if (currentLevel == 5) 
+//			{
+//				currentLevel += 1;	
+//			}
 
 		}
 		if (currentLevel == 6) 

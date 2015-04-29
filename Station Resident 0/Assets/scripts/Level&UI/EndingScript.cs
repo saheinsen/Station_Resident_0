@@ -29,11 +29,11 @@ public class EndingScript : MonoBehaviour {
 	{
 
 		
-		for (int i = 0; i < CreditsTextLines.Length; i++)
-		{
-			textToDisplay += CreditsTextLines[i] + "\n";
-		}
-		textToDisplay += "Press Esc To Go Back";
+//		for (int i = 0; i < CreditsTextLines.Length; i++)
+//		{
+//			textToDisplay += CreditsTextLines[i] + "\n";
+//		}
+//		textToDisplay += "Press Esc To Go Back";
 
 		loreManager = Character.GetComponent<LoreMngmt>();
 

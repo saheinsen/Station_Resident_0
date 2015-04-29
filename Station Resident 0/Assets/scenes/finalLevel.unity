@@ -552,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 193998934}
   m_LocalRotation: {x: -.72113961, y: -.692789853, z: 3.15220134e-08, w: 3.02828056e-08}
-  m_LocalPosition: {x: 51.1329842, y: -2.58231211, z: 2.62900894e-13}
+  m_LocalPosition: {x: 46.7370682, y: -2.4660182, z: 1.13686824e-13}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -658,7 +658,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &307274076
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +731,7 @@ Transform:
   m_LocalScale: {x: 2.91346669, y: 1, z: .585475981}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &365569592
 Prefab:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
 --- !u!1001 &403733151
 Prefab:
   m_ObjectHideFlags: 0
@@ -1145,6 +1145,7 @@ MonoBehaviour:
   Loreaccess5: 53
   Loreaccess6: 54
   Loreaccess7: 55
+  textureToDisplay: {fileID: 2800000, guid: d113abcd169cb6e4bb353137db5b6cd4, type: 3}
   itemGrab: {fileID: 8300000, guid: af250bd4aa037d14cbc909ab9e0a977f, type: 3}
   Loretext: 
   isPaused: 0
@@ -1738,11 +1739,11 @@ Transform:
   m_PrefabInternal: {fileID: 1493234639}
   m_GameObject: {fileID: 952282571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.9784241, y: -2.58229923, z: 0}
+  m_LocalPosition: {x: 50.8856468, y: -1.69846344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 7
 --- !u!1001 &994151322
 Prefab:
   m_ObjectHideFlags: 0
@@ -2254,6 +2255,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1458655459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1458655461}
+  - 212: {fileID: 1458655460}
+  m_Layer: 0
+  m_Name: Teleporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1458655460
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1458655459}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: de191017d281b0f43998f597c25466c6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1458655461
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1458655459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.9853554, y: -1.62665176, z: -3}
+  m_LocalScale: {x: 2.54754806, y: 2.54754686, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
 --- !u!1 &1459720810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,11 +2402,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 61fcf482b909ab64895890e742b6d689, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 48.9784241
+      value: 50.8856468
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61fcf482b909ab64895890e742b6d689, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.58229923
+      value: -1.69846344
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61fcf482b909ab64895890e742b6d689, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2379,7 +2430,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61fcf482b909ab64895890e742b6d689, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 61fcf482b909ab64895890e742b6d689, type: 2}
       propertyPath: currentLevel

@@ -100,8 +100,8 @@ public class UImanager : MonoBehaviour {
 		
         if (GUILayout.Button("Back"))
         {
-			menuState = main;
-            Debug.Log("WOLOLOLOLOLOLOLOLO");
+			Application.Quit();
+           
         }
 
 

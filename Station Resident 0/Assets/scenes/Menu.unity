@@ -189,7 +189,9 @@ MonoBehaviour:
   - Stefan Heinsen
   myGUISkin: {fileID: 0}
   Background: {fileID: 2800000, guid: 98c2523a1bd046d4398f310f509b2795, type: 3}
+  tutorialBackground: {fileID: 2800000, guid: 35042fe724ec699448c5f84f2af6a549, type: 3}
   logo: {fileID: 0}
+  tutorialScreeen: Tutorial Screen
 --- !u!4 &1346412755
 Transform:
   m_ObjectHideFlags: 0

@@ -8,9 +8,12 @@ public class UImanager : MonoBehaviour {
 
     public GUISkin myGUISkin;
     public Texture2D Background;
+	public Texture2D tutorialBackground;
     public Texture2D logo;
 
     private Rect WindowRect = new Rect((Screen.width / 2) - 100, Screen.height / 2, 200, 200);
+
+	private Rect toutorialRect = new Rect ((Screen.width / 2) - 100, (Screen.height / 2) - 200, 100, 100);
 
     private string menuState;
 
@@ -18,6 +21,7 @@ public class UImanager : MonoBehaviour {
     private string options = "options";
     private string credits = "credits";
 	private string levelSelect = "Level select";
+	public string tutorialScreeen = "Tutorial Screen";
 
     private string textToDisplay = "Credits" + "\n";
     private float volume = 1.0f;
@@ -45,6 +49,11 @@ public class UImanager : MonoBehaviour {
             GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Background); //work directly with screen space
         }
 
+		if (menuState == tutorialScreeen && Background != null) 
+		{
+			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), tutorialBackground); 
+		}
+
         if (logo != null)
         {
             GUI.DrawTexture(new Rect((Screen.width / 2) - 100, 30, 200, 200), logo);
@@ -68,6 +77,11 @@ public class UImanager : MonoBehaviour {
 			WindowRect = GUI.Window(0, WindowRect, levelFunc, "Level Select");
 		}
 
+		if (menuState == tutorialScreeen)
+		{
+			WindowRect = GUI.Window(0, toutorialRect, tutorialFunc, "");
+		}
+
         if (menuState == credits)
         {
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), textToDisplay);
@@ -79,8 +93,10 @@ public class UImanager : MonoBehaviour {
     {
         if (GUILayout.Button("Play Game"))
         {
-            Application.LoadLevel(1);
+			menuState = tutorialScreeen;
+
         }
+
 
 		if (GUILayout.Button("Level Select")) 
 		{
@@ -146,6 +162,14 @@ public class UImanager : MonoBehaviour {
 			menuState = main;
 		}
 
+	}
+
+	private void tutorialFunc(int id)
+	{
+		if (GUILayout.Button("Continue"))
+		{
+			Application.LoadLevel(1);		
+		}
 	}
 
 	// Update is called once per frame

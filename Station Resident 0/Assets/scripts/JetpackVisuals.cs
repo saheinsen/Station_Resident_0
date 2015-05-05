@@ -45,7 +45,7 @@ public class JetpackVisuals : MonoBehaviour {
 
 			Exhaust1.renderer.enabled = true;
 //			timeStamp = Time.time + JetpackCooldownInSeconds;
-			
+
 		}
 
 		if (Input.GetKeyUp(boostup)) 
@@ -59,6 +59,7 @@ public class JetpackVisuals : MonoBehaviour {
 		if (Input.GetKeyDown(boostdown)) 
 		{
 			Exhaust2.renderer.enabled = true;
+			Exhaust2.particleSystem.Play();
 //			timeStamp = Time.time + JetpackCooldownInSeconds;
 		}
 

@@ -5,7 +5,9 @@ public class LockedDoor : MonoBehaviour {
 
     public bool isopen;
     public bool isUnlocked;
-	public AudioClip Movesound;
+	
+    //aduio variables
+    public AudioClip Movesound;
 	AudioSource audioSource;
 
     // Use this for initialization

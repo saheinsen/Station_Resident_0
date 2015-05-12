@@ -7,16 +7,20 @@ public class UImanager : MonoBehaviour {
 
 
     public GUISkin myGUISkin;
+
+    //backgound and logo textures
     public Texture2D Background;
 	public Texture2D tutorialBackground;
     public Texture2D logo;
 
+
+    //rect instances for menus in Unity GUI
     private Rect WindowRect = new Rect((Screen.width / 2) - 100, Screen.height / 2, 200, 200);
 
-	private Rect toutorialRect = new Rect ((Screen.width / 2) - 100, (Screen.height / 2) - 200, 100, 100);
+	private Rect toutorialRect = new Rect ((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 50);
 
     private string menuState;
-
+    //different states for the menu
     private string main = "main";
     private string options = "options";
     private string credits = "credits";
@@ -29,11 +33,13 @@ public class UImanager : MonoBehaviour {
 
 
 
-	// Use this for initialization
+	
 	void Start () 
     {
+        //default menu state
         menuState = main;
 
+        //for loop to define credits screen
         for (int i = 0; i < CreditsTextLines.Length; i++)
         {
             textToDisplay += CreditsTextLines[i] + "\n";
@@ -51,7 +57,7 @@ public class UImanager : MonoBehaviour {
 
 		if (menuState == tutorialScreeen && Background != null) 
 		{
-			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), tutorialBackground); 
+			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), tutorialBackground); //similar function as above but for toutorial screen
 		}
 
         if (logo != null)
@@ -88,7 +94,7 @@ public class UImanager : MonoBehaviour {
         }
 
     }
-
+    //function for menu selection and choices
     private void menuFunc (int id)
     {
         if (GUILayout.Button("Play Game"))
@@ -122,7 +128,7 @@ public class UImanager : MonoBehaviour {
 
 
     }
-
+    //options screen with simple volume slider
     private void optionsFunc(int id)
     {
         GUILayout.Box("Volume");
@@ -135,7 +141,7 @@ public class UImanager : MonoBehaviour {
         }
     }
 	
-
+    //level selection details with different options
 	private void levelFunc(int id)
 	{
 		if (GUILayout.Button("Level One"))
@@ -163,7 +169,7 @@ public class UImanager : MonoBehaviour {
 		}
 
 	}
-
+    //handles toutorial  screen. is a simple menu with a transfer to new scene when selected
 	private void tutorialFunc(int id)
 	{
 		if (GUILayout.Button("Continue"))
@@ -172,7 +178,7 @@ public class UImanager : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
+	// update contains an exception for credits to allow users to return to the menu
 	void Update () 
     {
 

@@ -6,7 +6,7 @@ public class PowerSlot : MonoBehaviour {
     public LockedDoor poweredDoor;
 	public GameObject connectedDoor;
 
-	// Use this for initialization
+//grab locked door component
 	void Start () 
     {
 		poweredDoor = connectedDoor.GetComponent<LockedDoor>();
@@ -14,7 +14,7 @@ public class PowerSlot : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
+
 	void Update () 
     {
     

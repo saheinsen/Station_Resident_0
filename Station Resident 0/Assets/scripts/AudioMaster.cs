@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AudioMaster : MonoBehaviour {
 
-
+    //script to handle Events regarding the game music in the background
 
 	static void playerNormal(AudioSource bgmSource, AudioClip clip)
 	{

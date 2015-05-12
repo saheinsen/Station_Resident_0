@@ -64,7 +64,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
                 Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("If you ever wake up, know that you are not alone. \n I am trying to get us out of here. \n Look for the capsules I have left for you.");
 
                 
 
@@ -86,7 +86,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("There are teleporters that can lead us back home. \n I am trying to repair them");
 				
 				
 				
@@ -108,7 +108,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("I am sorry I did not wake you. \n I had more pressing matters to deal with. \n We are the only ones who survived.");
 				
 				
 				
@@ -130,7 +130,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("I don't even know if you will wake up.");
 				
 				
 				
@@ -152,7 +152,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("The worst part is the quiet. I cannot stand it. \n The sound of my breathing is the only thing keeping me sane. \n Have to be calm, Oxygen is running low");
 				
 				
 				
@@ -174,7 +174,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("I am almost there. I hope to see you on the other side. \n Maybe I can shake your hand.");
 				
 				
 				
@@ -196,7 +196,7 @@ public class LoreMngmt : MonoBehaviour {
 				isPaused = true;
 				Time.timeScale = 0.0f;
 				Guimanager.enabled = true;
-				Loretext = ("LORE MOTHERFOCKA! DO YOU READ IT?");
+				Loretext = ("If you ever get this, you know that you are alone; I couldnt make it out. \n The capsules I left for you have the schematics for the last Teleporter. \n Good luck, Station Resident 0.");
 				
 				
 				
@@ -213,7 +213,7 @@ public class LoreMngmt : MonoBehaviour {
 
 	}
 	
-	//lore collision detection
+	//lore collision detection for each specific item
 	void OnTriggerEnter2D(Collider2D col)
 	{	
 			if (col.gameObject.name == "Lore1") 
@@ -267,6 +267,8 @@ public class LoreMngmt : MonoBehaviour {
 
 
 	}
+
+    //Gui system that will display items for each peice of Lore the player collects
 	void OnGUI()
 	{
 		if (Loreowned1 == true) 

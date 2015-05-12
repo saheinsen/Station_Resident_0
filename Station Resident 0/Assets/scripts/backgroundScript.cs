@@ -8,18 +8,10 @@ public class backgroundScript : MonoBehaviour {
 	Vector3 temp;
 
 
-
 	
-	
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
 	void Update () 
 	{
+        //allows backgound to follow character movement but ignore thier rotation
 		temp = player.transform.position;
 
 		temp.x = player.transform.position.x;

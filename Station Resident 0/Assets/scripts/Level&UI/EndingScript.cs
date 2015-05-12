@@ -24,17 +24,14 @@ public class EndingScript : MonoBehaviour {
 	
 	public LoreMngmt loreManager;
 
-	// Use this for initialization
+
 	void Start () 
 	{
 
-		
-//		for (int i = 0; i < CreditsTextLines.Length; i++)
-//		{
-//			textToDisplay += CreditsTextLines[i] + "\n";
-//		}
-//		textToDisplay += "Press Esc To Go Back";
 
+        //makes a similar system to the main menu
+
+        //loop to figure out which ending the player qualifies for
 		loreManager = Character.GetComponent<LoreMngmt>();
 
 
@@ -55,7 +52,7 @@ public class EndingScript : MonoBehaviour {
 	{
 		if (Background != null) //checks for null reference exception
 		{
-			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Background); //work directly with screen space
+			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Background);
 		}
 		
 		if (logo != null)
@@ -65,7 +62,7 @@ public class EndingScript : MonoBehaviour {
 		
 		GUI.skin = myGUISkin;
 		
-		//check UIstate
+		//check UIstate, either state gives the same outcome in terms of format
 		if (menuState == main1 || menuState == main2)
 		{
 			WindowRect = GUI.Window(0, WindowRect, menuFunc, "Station Resident 0");
@@ -76,13 +73,14 @@ public class EndingScript : MonoBehaviour {
 	
 	private void menuFunc (int id)
 	{
+        //loop to display ending text
 		if (menuState == main1) 
 		{
 			GUILayout.Label("Station Resident 0 never figured out how to escape the facility that will soon be their tomb. They could only wait as they slowly wasted away in the depths of space.");
 		}
 		if (menuState == main2) 
 		    {
-			GUILayout.Label("Using the information drawn from the numerous notes left, Station Resident 0 peiced together the parts in the lab to build the last Teleporter. The one that would take them home");
+			GUILayout.Label("Using the help of the notes they gathered, Station Resident 0 peiced together the parts in the lab to build the last Teleporter. The one that would take them home");
 			}
 
 		

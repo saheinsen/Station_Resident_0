@@ -111,26 +111,26 @@ public class Character : MonoBehaviour {
 		if (Input.GetKeyDown(boostup)&& timeStamp <=Time.time) 
 		{
 			rigidbody2D.AddForce(transform.up * jetpackPowa);
-			audioSource.PlayOneShot(jetpackClip, 0.1f);
+			audioSource.PlayOneShot(jetpackClip, 0.5f);
 			timeStamp = Time.time + JetpackCooldownInSeconds;
 
 		}
 		if (Input.GetKeyDown(boostdown)&& timeStamp <=Time.time) 
 		{
 			rigidbody2D.AddForce(-transform.up * jetpackPowa);
-			audioSource.PlayOneShot(jetpackClip, 0.1f);
+			audioSource.PlayOneShot(jetpackClip, 0.5f);
 			timeStamp = Time.time + JetpackCooldownInSeconds;
 		}
 		if (Input.GetKeyDown(boostright)&& timeStamp <=Time.time) 
 		{
 			rigidbody2D.AddForce(transform.right * jetpackPowa);
-			audioSource.PlayOneShot(jetpackClip, 0.1f);
+			audioSource.PlayOneShot(jetpackClip, 0.5f);
 			timeStamp = Time.time + JetpackCooldownInSeconds;
 		}
 		if (Input.GetKeyDown(boostleft)&& timeStamp <=Time.time) 
 		{
 			rigidbody2D.AddForce(-transform.right * jetpackPowa);
-			audioSource.PlayOneShot(jetpackClip, 0.1f);
+			audioSource.PlayOneShot(jetpackClip, 0.5f);
 			timeStamp = Time.time + JetpackCooldownInSeconds;
 
 
@@ -161,51 +161,12 @@ public class Character : MonoBehaviour {
 		{
 			gameObject.rigidbody2D.drag = 1f;
 			gameObject.rigidbody2D.angularDrag = 5f;
-			audioSource.PlayOneShot(InertiaMachineClip);
+			audioSource.PlayOneShot(InertiaMachineClip, 2.0f);
 
 		}
 
 
-        //Player grabbing mechanic in detail, uses raycast to see if item is near, 
-        //then loops to manage weather or not the item is grabbed
-
-		//Vector3 temp = gameObject.transform.localEulerAngles;
-
-		//Vector2 temp2D = new Vector2(temp.x, temp.y);
         
-//		RaycastHit2D blah = Physics2D.Raycast(gameObject.transform.position, transform.right, 5, layerMask);
-//
-//
-//		if (blah)
-//        {
-//           
-//            if (Input.GetKeyDown(itemlock))
-//            {
-//
-//                if (isGrabbed == false)
-//                {
-//					Debug.DrawRay(gameObject.transform.position, Vector3.right, Color.red);
-//
-//                    blah.transform.localRotation = gameObject.transform.localRotation;
-//                    blah.collider.gameObject.transform.parent = gameObject.transform;
-//                    blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-//                    isGrabbed = true;
-//					audioSource.PlayOneShot(grabSound);
-//                }
-//
-//                else if (isGrabbed == true)
-//                {
-//					Debug.DrawRay(gameObject.transform.position, Vector3.right, Color.red);
-//
-//                    blah.collider.gameObject.transform.parent = null;
-//                    blah.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
-//                    isGrabbed = false;
-//					audioSource.PlayOneShot(grabSound);
-//                }
-//            }
-//
-//		}
-
 
 
 		//death mechanic resets level
@@ -238,7 +199,8 @@ public class Character : MonoBehaviour {
 		}
    }
 
-
+    //new version of grabbing mechanic that uses triggers instead of raycasts
+    //ideally it would allow the player to grab and hold objects
 		void OnTriggerStay2D(Collider2D grb)
 		{
 
@@ -248,7 +210,8 @@ public class Character : MonoBehaviour {
 			{
 
 				grb.transform.localRotation = gameObject.transform.localRotation;
-				grb.gameObject.transform.parent = gameObject.transform;
+                grb.gameObject.transform.parent = gameObject.transform;
+                grb.gameObject.transform.localPosition = new Vector3 (-2, 0, 0);
 				grb.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 				isGrabbed = true;
 				audioSource.PlayOneShot(grabSound);
